@@ -57,10 +57,12 @@ def setup_dist_from_mpi(
         return mpi_rank, local_rank, device
 
 def _setup_dist_from_mpi(master_addr, backend, port, n_attempts, verbose):
-    from mpi4py import MPI  # This must be imported in order to get e   rrors from all ranks to show up
+    # from mpi4py import MPI  # This must be imported in order to get e   rrors from all ranks to show up
 
-    mpi_rank = MPI.COMM_WORLD.Get_rank()
-    mpi_size = MPI.COMM_WORLD.Get_size()
+    # mpi_rank = MPI.COMM_WORLD.Get_rank()
+    # mpi_size = MPI.COMM_WORLD.Get_size()
+    mpi_rank = 0
+    mpi_size = 1
 
 
     os.environ["RANK"] = str(mpi_rank)
